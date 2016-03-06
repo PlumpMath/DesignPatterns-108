@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Observer
 {
     /// <summary>
-    /// an object (called the subject), maintains a list of its dependents (called observers)) and 
+    /// an object (called the subject, maintains a list of its dependents (called observers)) and 
     /// notifies them automatically of any state changes
     /// ussaly by calling on of their methods
     /// </summary>
@@ -23,18 +23,6 @@ namespace Observer
             stockGrabber.setAAPLPrice(247.00);
             stockGrabber.setGOOGLPrice(537.00);
 
-            StockObserver observer2 = new StockObserver(stockGrabber);
-
-            stockGrabber.setIBMPrice(197.00);
-            stockGrabber.setAAPLPrice(247.00);
-            stockGrabber.setGOOGLPrice(537.00);
-
-            stockGrabber.Unregister(observer1);
-
-            stockGrabber.setIBMPrice(583.00);
-            stockGrabber.setAAPLPrice(682.00);
-            stockGrabber.setGOOGLPrice(234.00);
-
             Console.Read();
         }
 
@@ -46,7 +34,5 @@ namespace Observer
         // --Loose coupling is a benefit  - The Subject (publisher)doesn't need to know anything about the Observers (subscribers)
         // --Negaties : The subject (publisher) may send updates that don't matter to the Observer (subscriber)
     }
-
-     
 
 }
